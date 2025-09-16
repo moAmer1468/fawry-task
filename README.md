@@ -38,7 +38,7 @@ ng version
 1. Open a terminal and run:
 
    ```bash
-   git clone https://github.com/moAmer1468/movieapp.git
+   git clone https://github.com/moAmer1468/fawry-task.git
    ```
 2. Navigate into the project folder:
 
