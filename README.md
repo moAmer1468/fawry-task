@@ -1,9 +1,4 @@
-تمام ✅ خليني أعدل الملف بتاعك بحيث يكون متوافق مع اسم الريبو الجديد (`fawry-task`) وكمان أضيف المعلومة إن المشروع بيستخدم **in-memory database** مش MySQL/PostgreSQL.
 
-أهو نسخة محدثة وجاهزة:
-
-````markdown
-# 🎬 Fawry Task
 
 Fawry Task is a Fullstack application built with **Spring Boot (Backend)** and **Angular (Frontend)**.  
 This guide explains how to set up and run the project step by step.
