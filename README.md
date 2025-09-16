@@ -1,10 +1,11 @@
-# Fullstack-movie-app
-آها 💡 كدا فهمت قصدك يا محمد.
-انت عايز **README.md** يكون فيه كل الخطوات العملية اللي المدير أو أي حد يراجع الكود يقدر يمشي عليها خطوة بخطوة ويشغل المشروع بدون ما يسألك.
+تمام 👌 بما إن عندك **test users** زي:
 
-أنا هكتبلك ملف جاهز، مرتب، بالإنجليزي وبالتفاصيل (من أول ما يـ clone المشروع لحد ما يفتح الـ app في المتصفح).
+* `user / user`
+* `admin / admin`
 
----
+يبقى لازم نضيف جزء واضح في **README.md** علشان المدير أو أي حد يجرب المشروع يقدر يدخل ويشوف الفرق بين صلاحيات الـ admin والـ user.
+
+أهو الملف كامل بعد التعديل:
 
 ````markdown
 # 🎬 MovieApp
@@ -109,6 +110,26 @@ movieapp/
 
 ---
 
+## 🔑 Test Users
+
+You can log in with the following test accounts:
+
+* **Admin Account**
+
+  ```
+  username: admin
+  password: admin
+  ```
+
+* **User Account**
+
+  ```
+  username: user
+  password: user
+  ```
+
+---
+
 ## 🛠 Database Setup (if required)
 
 * The backend is configured to use a database (e.g., MySQL/PostgreSQL).
@@ -133,10 +154,6 @@ movieapp/
 * Run backend (`mvn spring-boot:run`)
 * Run frontend (`ng serve`)
 * Open [http://localhost:4200](http://localhost:4200)
+* Use provided test accounts (admin/user) to log in
 
-```
-
----
-
-تحب أزود في الملف ده كمان **Example accounts (admin/user login credentials)** لو عندك مستخدمين جاهزين للتست؟
 ```
