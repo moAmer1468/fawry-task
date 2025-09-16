@@ -1,16 +1,11 @@
-تمام 👌 بما إن عندك **test users** زي:
+تمام ✅ خليني أعدل الملف بتاعك بحيث يكون متوافق مع اسم الريبو الجديد (`fawry-task`) وكمان أضيف المعلومة إن المشروع بيستخدم **in-memory database** مش MySQL/PostgreSQL.
 
-* `user / user`
-* `admin / admin`
-
-يبقى لازم نضيف جزء واضح في **README.md** علشان المدير أو أي حد يجرب المشروع يقدر يدخل ويشوف الفرق بين صلاحيات الـ admin والـ user.
-
-أهو الملف كامل بعد التعديل:
+أهو نسخة محدثة وجاهزة:
 
 ````markdown
-# 🎬 MovieApp
+# 🎬 Fawry Task
 
-MovieApp is a Fullstack application built with **Spring Boot (Backend)** and **Angular (Frontend)**.  
+Fawry Task is a Fullstack application built with **Spring Boot (Backend)** and **Angular (Frontend)**.  
 This guide explains how to set up and run the project step by step.
 
 ---
@@ -43,14 +38,14 @@ ng version
 2. Navigate into the project folder:
 
    ```bash
-   cd movieapp
+   cd fawry-task
    ```
 
 The project structure looks like this:
 
 ```
-movieapp/
-  ├── backend   (Spring Boot)
+fawry-task/
+  ├── backend/   (Spring Boot)
   └── frontend/  (Angular)
 ```
 
@@ -73,6 +68,9 @@ movieapp/
    ```
    http://localhost:8080
    ```
+
+📌 **Note:** The project uses an **in-memory database (H2)**, so you don’t need to install MySQL or PostgreSQL.
+The database is automatically created and populated at runtime.
 
 ---
 
@@ -130,13 +128,10 @@ You can log in with the following test accounts:
 
 ---
 
-
 ## ✅ Summary
 
-* Clone the repo
-* Run backend (`mvn spring-boot:run`)
+* Clone the repo (`fawry-task`)
+* Run backend (`mvn spring-boot:run`) → uses **H2 in-memory database**
 * Run frontend (`ng serve`)
 * Open [http://localhost:4200](http://localhost:4200)
 * Use provided test accounts (admin/user) to log in
-
-```
