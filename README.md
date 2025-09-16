@@ -38,7 +38,7 @@ ng version
 1. Open a terminal and run:
 
    ```bash
-   git clone https://github.com/USERNAME/movieapp.git
+   git clone https://github.com/moAmer1468/movieapp.git
    ```
 2. Navigate into the project folder:
 
@@ -50,7 +50,7 @@ The project structure looks like this:
 
 ```
 movieapp/
-  ├── backend/   (Spring Boot)
+  ├── backend   (Spring Boot)
   └── frontend/  (Angular)
 ```
 
@@ -130,23 +130,6 @@ You can log in with the following test accounts:
 
 ---
 
-## 🛠 Database Setup (if required)
-
-* The backend is configured to use a database (e.g., MySQL/PostgreSQL).
-* Update database credentials in:
-
-  ```
-  backend/src/main/resources/application.properties
-  ```
-* Example:
-
-  ```properties
-  spring.datasource.url=jdbc:mysql://localhost:3306/movieapp
-  spring.datasource.username=root
-  spring.datasource.password=your_password
-  ```
-
----
 
 ## ✅ Summary
 
