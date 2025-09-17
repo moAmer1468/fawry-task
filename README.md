@@ -49,21 +49,20 @@ fawry-task/
 
 ## 🖼️ Interface Screenshots
 
-### Home Page
 
-![Home Page](screenshots/image-1.PNG)
+![Image 1](screenshots/image-1.PNG)
 
-### Movie List
 
-![Movie List](screenshots/image-2.png)
 
-### Movie Details
+![Movie List](screenshots/image-2.PNG)
 
-![Movie Details](screenshots/image-3.png)
 
-### Admin Dashboard
 
-![Admin Dashboard](screenshots/image-4.png)
+![Movie Details](screenshots/image-3.PNG)
+
+
+
+![Admin Dashboard](screenshots/image-4.PNG)
 
 ---
 
