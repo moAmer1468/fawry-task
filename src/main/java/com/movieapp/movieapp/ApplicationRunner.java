@@ -25,7 +25,7 @@ public class ApplicationRunner {
                 User user = User.builder()
                         .username("user")
                         .password(passwordEncoder.encode("user"))
-                        .role(Role.ADMIN)
+                        .role(Role.USER)
                         .build();
                 userService.addUser(user);
             }
