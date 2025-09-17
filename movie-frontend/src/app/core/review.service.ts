@@ -18,47 +18,29 @@ export class ReviewService {
 
   // Get all reviews for a movie
   getMovieReviews(movieId: number): Observable<Review[]> {
-    // This is a mock implementation since there's no backend endpoint yet
-    // In a real implementation, this would call a backend API
-    return new Observable<Review[]>(observer => {
-      // Simulate network delay
-      setTimeout(() => {
-        // Return mock data
-        observer.next([
-          {
-            id: 1,
-            movieId: movieId,
-            username: 'user1',
-            content: 'Great movie! Loved the plot and characters.',
-            createdAt: new Date().toISOString()
-          },
-          {
-            id: 2,
-            movieId: movieId,
-            username: 'user2',
-            content: 'Interesting concept but the execution could be better.',
-            createdAt: new Date(Date.now() - 86400000).toISOString() // 1 day ago
-          }
-        ]);
-        observer.complete();
-      }, 500);
-    });
+    return this.http.get<Review[]>(`${environment.apiBaseUrl}/api/reviews/movie/${movieId}`);
   }
 
   // Add a review for a movie
   addReview(review: Review): Observable<Review> {
-    // This is a mock implementation since there's no backend endpoint yet
-    return new Observable<Review>(observer => {
-      setTimeout(() => {
-        const newReview = {
-          ...review,
-          id: Math.floor(Math.random() * 1000) + 3, // Generate random ID
-          username: 'currentUser', // In real implementation, this would come from the backend
-          createdAt: new Date().toISOString()
-        };
-        observer.next(newReview);
-        observer.complete();
-      }, 500);
+    return this.http.post<Review>(`${environment.apiBaseUrl}/api/reviews`, {
+      movieId: review.movieId,
+      content: review.content
     });
+  }
+
+  // Get reviews by current user
+  getUserReviews(): Observable<Review[]> {
+    return this.http.get<Review[]>(`${environment.apiBaseUrl}/api/reviews/user`);
+  }
+
+  // Get review count for a movie
+  getMovieReviewCount(movieId: number): Observable<{count: number}> {
+    return this.http.get<{count: number}>(`${environment.apiBaseUrl}/api/reviews/movie/${movieId}/count`);
+  }
+
+  // Delete a review
+  deleteReview(reviewId: number): Observable<void> {
+    return this.http.delete<void>(`${environment.apiBaseUrl}/api/reviews/${reviewId}`);
   }
 }

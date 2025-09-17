@@ -70,7 +70,9 @@ import { RecommendationService } from '../../core/recommendation.service';
         <div class="movie-grid">
           <div class="movie-card" *ngFor="let m of recommendations()">
             <div class="movie-poster">
-              <img [src]="m.posterUrl || '/assets/no-poster.png'" alt="poster" width="300" height="200" />
+              <img [src]="m.posterUrl || '/assets/no-poster.png'" 
+                   (error)="handleImageError($event)" 
+                   alt="poster" width="300" height="200" />
             </div>
             <div class="movie-info">
               <h4>{{ m.title }}</h4>
@@ -90,7 +92,9 @@ import { RecommendationService } from '../../core/recommendation.service';
         <div class="movie-grid" *ngIf="movies().length > 0">
           <div class="movie-card" *ngFor="let m of movies()">
             <div class="movie-poster">
-              <img [src]="m.posterUrl || '/assets/no-poster.png'" alt="poster" width="300" height="200" />
+              <img [src]="m.posterUrl || '/assets/no-poster.png'" 
+                   (error)="handleImageError($event)" 
+                   alt="poster" width="300" height="200" />
             </div>
             <div class="movie-info">
               <h4>{{ m.title }}</h4>
@@ -481,6 +485,10 @@ export class UserDashboardComponent {
   clearSearch() {
     this.query = '';
     this.load();
+  }
+
+  handleImageError(event: any) {
+    event.target.src = '/assets/no-poster.png';
   }
 }
 

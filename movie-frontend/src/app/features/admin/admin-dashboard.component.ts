@@ -54,7 +54,9 @@ import { AuthService } from '../../core/auth.service';
           <div class="movie-grid">
             <div class="movie-card" *ngFor="let m of omdbResults()">
               <div class="movie-poster">
-                <img [src]="m.posterUrl || '/assets/no-poster.png'" alt="poster" width="300" height="200" />
+                <img [src]="m.posterUrl || '/assets/no-poster.png'" 
+                     (error)="handleImageError($event)" 
+                     alt="poster" width="300" height="200" />
               </div>
               <div class="movie-info">
                 <h4>{{ m.title }}</h4>
@@ -85,7 +87,9 @@ import { AuthService } from '../../core/auth.service';
               />
             </div>
             <div class="movie-poster">
-              <img [src]="m.posterUrl || '/assets/no-poster.png'" alt="poster" width="80" height="120" />
+              <img [src]="m.posterUrl || '/assets/no-poster.png'" 
+                   (error)="handleImageError($event)" 
+                   alt="poster" width="80" height="120" />
             </div>
             <div class="movie-info">
               <h4>{{ m.title }}</h4>
@@ -503,6 +507,10 @@ export class AdminDashboardComponent {
   loadStats() {
     this.movies.getStats().subscribe(stats => this.movieStats.set(stats));
     this.auth.getUserStats().subscribe(stats => this.userStats.set(stats));
+  }
+
+  handleImageError(event: any) {
+    event.target.src = '/assets/no-poster.png';
   }
 }
 

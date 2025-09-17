@@ -14,7 +14,9 @@ import { Review, ReviewService } from '../../core/review.service';
     <div class="movie-detail-container">
       <div *ngIf="movie() as m" class="movie-detail">
         <div class="movie-poster-section">
-          <img [src]="m.posterUrl || '/assets/no-poster.png'" alt="poster" class="movie-poster" width="300" height="450" />
+          <img [src]="m.posterUrl || '/assets/no-poster.png'" 
+               (error)="handleImageError($event)" 
+               alt="poster" class="movie-poster" width="300" height="450" />
         </div>
         
         <div class="movie-info-section">
@@ -56,7 +58,7 @@ import { Review, ReviewService } from '../../core/review.service';
               <h3>Average Rating</h3>
               <div class="rating-display">
                 <span class="rating-stars">{{ getStars(average()) }}</span>
-                <span class="rating-value">{{ average() | number:'1.1-1' }}/5</span>
+                <span class="rating-value">{{ average() | number:'1.1-1' }}/10</span>
               </div>
             </div>
             
@@ -451,8 +453,8 @@ export class MovieDetailComponent {
 
   movie = signal<Movie | null>(null);
   average = signal(0);
-  ratings = [1,2,3,4,5];
-  myRating = 5;
+  ratings = [1,2,3,4,5,6,7,8,9,10];
+  myRating = 8;
   reviews = signal<Review[]>([]);
   reviewContent = '';
 
@@ -476,8 +478,10 @@ export class MovieDetailComponent {
   }
 
   getStars(rating: number): string {
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 >= 0.5;
+    // Convert 10-point scale to 5-star display
+    const scaledRating = rating / 2;
+    const fullStars = Math.floor(scaledRating);
+    const hasHalfStar = scaledRating % 1 >= 0.5;
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
     
     return '★'.repeat(fullStars) + 
@@ -528,6 +532,10 @@ export class MovieDetailComponent {
 
   goBack() {
     this.router.navigate(['/user/dashboard']);
+  }
+
+  handleImageError(event: any) {
+    event.target.src = '/assets/no-poster.png';
   }
 }
 
