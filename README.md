@@ -51,7 +51,7 @@ fawry-task/
 
 ### Home Page
 
-![Home Page](screenshots/image-1.png)
+![Home Page](screenshots/image-1.PNG)
 
 ### Movie List
 
