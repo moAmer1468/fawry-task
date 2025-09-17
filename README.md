@@ -1,5 +1,5 @@
 
-
+````markdown
 Fawry Task is a Fullstack application built with **Spring Boot (Backend)** and **Angular (Frontend)**.  
 This guide explains how to set up and run the project step by step.
 
@@ -42,7 +42,28 @@ The project structure looks like this:
 fawry-task/
   ├── backend/   (Spring Boot)
   └── frontend/  (Angular)
+  └── screenshots/  (Interface images)
 ```
+
+---
+
+## 🖼️ Interface Screenshots
+
+### Home Page
+
+![Home Page](screenshots/image-1.png)
+
+### Movie List
+
+![Movie List](screenshots/image-2.png)
+
+### Movie Details
+
+![Movie Details](screenshots/image-3.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/image-4.png)
 
 ---
 
@@ -130,3 +151,5 @@ You can log in with the following test accounts:
 * Run frontend (`ng serve`)
 * Open [http://localhost:4200](http://localhost:4200)
 * Use provided test accounts (admin/user) to log in
+
+```
